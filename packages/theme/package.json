@@ -1,0 +1,28 @@
+{
+  "name": "@poc-lib/theme",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "lint": "eslint src/ --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "@poc-lib/eslint-config": "*",
+    "@poc-lib/tsconfig": "*",
+    "style-dictionary": "^3.9.0",
+    "typescript": "^5.2.2",
+    "tsup": "^6.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

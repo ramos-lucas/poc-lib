@@ -1,0 +1,52 @@
+{
+  "name": "@poc-lib/components",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "lint": "eslint src/ --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@poc-lib/eslint-config": "*",
+    "@poc-lib/tsconfig": "*",
+    "@poc-lib/icons": "*",
+    "@poc-lib/theme": "*",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/react": "^7.5.3",
+    "@storybook/react-vite": "^7.5.3",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "react": "^17",
+    "react-dom": "^17",
+    "storybook": "^7.5.3",
+    "tsup": "^6.0.1",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.5"
+  },
+  "peerDependencies": {
+    "@poc-lib/icons": "*",
+    "@poc-lib/theme": "*",
+    "react": "^17",
+    "react-dom": "^17"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
