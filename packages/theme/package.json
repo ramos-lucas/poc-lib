@@ -10,17 +10,18 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "build": "tsup src/index.ts --format esm,cjs --dts --external @acme-org/styled-system react",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external @acme-org/styled-system react",
     "lint": "eslint src/ --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
+    "@pandacss/dev": "^0.18.3",
     "@poc-lib/eslint-config": "*",
     "@poc-lib/tsconfig": "*",
     "style-dictionary": "^3.9.0",
-    "typescript": "^5.2.2",
-    "tsup": "^6.0.1"
+    "tsup": "^6.0.1",
+    "typescript": "^5.2.2"
   },
   "publishConfig": {
     "access": "public"
