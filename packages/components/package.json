@@ -19,9 +19,9 @@
   },
   "devDependencies": {
     "@poc-lib/eslint-config": "*",
-    "@poc-lib/tsconfig": "*",
     "@poc-lib/icons": "*",
     "@poc-lib/theme": "*",
+    "@poc-lib/tsconfig": "*",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
@@ -48,5 +48,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@pandacss/dev": "^0.18.3"
   }
 }

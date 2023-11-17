@@ -18,3 +18,10 @@ export const Default = {
     children: 'Label',
   },
 };
+
+export const Disabled = {
+  args: {
+    children: 'Label',
+    variant: 'disabled'
+  },
+};

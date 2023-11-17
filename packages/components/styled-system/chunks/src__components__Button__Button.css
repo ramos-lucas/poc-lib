@@ -1,0 +1,62 @@
+@layer utilities {
+
+  .items_center {
+    align-items: center
+    }
+
+  .justify_center {
+    justify-content: center
+    }
+
+  .bg_\#8db5af {
+    background: #8db5af
+    }
+
+  .bg_red {
+    background: red
+    }
+
+  .d_flex {
+    display: flex
+    }
+
+  .p_1rem {
+    padding: 1rem
+    }
+
+  .bg_lightgray {
+    background-color: lightgray
+    }
+
+  .rounded_1rem {
+    border-radius: 1rem
+    }
+
+  .cursor_pointer {
+    cursor: pointer
+    }
+
+  .bg_lightgray {
+    background: lightgray
+    }
+
+  .text_white {
+    color: var(--colors-white)
+    }
+
+  .cursor_not-allowed {
+    cursor: not-allowed
+    }
+
+  .\[\&\:hover\]\:text_\#bebf7c:hover {
+    color: #bebf7c
+        }
+
+  .\[\&\:hover\]\:text_yellow:hover {
+    color: yellow
+        }
+
+  .\[\&\:hover\]\:text_white:hover {
+    color: var(--colors-white)
+        }
+}
