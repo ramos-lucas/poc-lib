@@ -19,10 +19,13 @@
     "@poc-lib/eslint-config": "*",
     "@poc-lib/tsconfig": "*",
     "style-dictionary": "^3.9.0",
-    "typescript": "^5.2.2",
-    "tsup": "^6.0.1"
+    "tsup": "^6.0.1",
+    "typescript": "^5.2.2"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "^1.14.0"
   }
 }
