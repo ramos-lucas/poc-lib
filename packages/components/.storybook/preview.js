@@ -1,4 +1,7 @@
 /** @type { import('@storybook/react').Preview } */
+
+import '@poc-lib/tokens/dist/variables.css';
+
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },

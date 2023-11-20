@@ -1,0 +1,22 @@
+{
+  "name": "@poc-lib/tokens",
+  "version": "0.0.0",
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "style-dictionary build",
+    "lint": "eslint src/ --fix",
+    "clean": "rimraf .turbo && rimraf node_modules && rimraf dist"
+  },
+  "devDependencies": {
+    "@poc-lib/eslint-config": "*",
+    "@poc-lib/tsconfig": "*",
+    "style-dictionary": "^3.9.0",
+    "typescript": "^5.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

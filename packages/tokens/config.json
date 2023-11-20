@@ -1,0 +1,29 @@
+{
+  "source": ["assets/**/*.json"],
+  "platforms": {
+    "web": {
+      "transformGroup": "web",
+      "buildPath": "dist/",
+      "files": [{
+        "format": "css/variables",
+        "destination": "variables.css"
+      },
+      {
+        "format": "scss/variables",
+        "destination": "variables.scss"
+      }]
+    },
+    "ts": {
+      "transformGroup": "js",
+      "buildPath": "dist/",
+      "files": [{
+        "format": "javascript/es6",
+        "destination": "variables.js"
+      },
+      {
+        "format": "typescript/es6-declarations",
+        "destination": "variables.d.ts"
+      }]
+    }
+  }
+}

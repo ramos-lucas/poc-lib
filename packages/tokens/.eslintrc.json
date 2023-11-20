@@ -1,0 +1,3 @@
+{
+  "extends": ["@poc-lib/eslint-config"]
+}

@@ -1,0 +1,5 @@
+.root {
+    appearance: none;
+    background-color: var(--button-color-primary);
+    color: var(--color-base-white);
+}
