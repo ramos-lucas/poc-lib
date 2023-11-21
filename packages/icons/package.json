@@ -14,22 +14,22 @@
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
     "lint": "eslint src/ --fix",
     "clean": "rimraf .turbo && rimraf node_modules && rimraf dist",
-    "generate-icons": "yarn svgr --out-dir src/components src/assets --title-prop=true --typescript --icon --replace-attr-values '#141414=currentColor'"
+    "generate-icons": "yarn svgr --out-dir src/components src/assets --typescript --icon --replace-attr-values '#141414=currentColor'"
   },
   "devDependencies": {
     "@poc-lib/eslint-config": "*",
     "@poc-lib/tsconfig": "*",
     "@svgr/cli": "^8.1.0",
-    "@types/react": "^17",
-    "@types/react-dom": "^17",
-    "react": "^17",
-    "react-dom": "^17",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tsup": "^6.0.1",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "react": "^17",
-    "react-dom": "^17"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "publishConfig": {
     "access": "public"

@@ -1,9 +1,0 @@
-{
-    "cssVariables.lookupFiles": [
-        "**/*.css",
-        "**/*.scss",
-        "**/*.sass",
-        "**/*.less",
-        "node_modules/@poc-lib/tokens/dist/variables.css"
-    ]
-}

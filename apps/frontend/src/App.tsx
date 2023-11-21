@@ -1,13 +1,34 @@
-import { Button } from "@poc-lib/components";
-import "@poc-lib/tokens/dist/variables.css"
-import "@poc-lib/components/dist/index.css"
+import { Button, ButtonProps, ThemeProvider } from '@poc-lib/components';
+
+const variants = ['primary', 'secondary', 'accent', 'ghost'];
 
 function App() {
   return (
-    <>
-      <h1 style={{color: "var(--color-base-red)"}}>Hello World</h1>
-      <Button>Click me</Button>
-    </>
+    <ThemeProvider>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          columnGap: 16,
+          rowGap: 8,
+        }}
+      >
+        {variants.map((variant) => (
+          <Button variant={variant as ButtonProps['variant']} key={variant}>
+            {variant}
+          </Button>
+        ))}
+        {variants.map((variant) => (
+          <Button
+            variant={variant as ButtonProps['variant']}
+            key={variant}
+            disabled
+          >
+            {variant}
+          </Button>
+        ))}
+      </div>
+    </ThemeProvider>
   );
 }
 

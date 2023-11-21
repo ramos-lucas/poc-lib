@@ -1,18 +1,16 @@
-import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
+import React from 'react';
 
-import { Bell } from '@poc-lib/icons';
+import * as Styled from './Button.styles';
+import { ButtonProps, defaultProps } from './Button.types';
 
-import styles from './styles.module.css';
-
-export type ButtonProps = PropsWithChildren<
-  ButtonHTMLAttributes<HTMLButtonElement>
->;
-
-export function Button({ children, ...rest }: ButtonProps) {
+export function Button({
+  children,
+  variant = defaultProps.variant,
+  ...rest
+}: ButtonProps) {
   return (
-    <button {...rest} className={styles.root}>
-      <Bell />
+    <Styled.Button variant={variant} {...rest}>
       {children}
-    </button>
+    </Styled.Button>
   );
 }

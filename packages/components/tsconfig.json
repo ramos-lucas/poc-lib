@@ -1,10 +1,12 @@
 {
   "extends": "@poc-lib/tsconfig/react-library.json",
-  "include": ["src", "index.d.ts"],
+  "include": ["src"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "types",
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "resolveJsonModule": true,
+    "jsx": "react-jsx"
   }
 }

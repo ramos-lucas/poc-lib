@@ -1,6 +1,5 @@
 /** @type { import('@storybook/react').Preview } */
-
-import '@poc-lib/tokens/dist/variables.css';
+import {ThemeProvider} from '../src/contexts/ThemeProvider'
 
 const preview = {
   parameters: {
@@ -12,6 +11,13 @@ const preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <ThemeProvider>
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
 };
 
 export default preview;
