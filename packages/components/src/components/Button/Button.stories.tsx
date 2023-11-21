@@ -1,20 +1,51 @@
+import { Meta, StoryObj } from '@storybook/react';
+
 import { Button } from './Button';
+import { buttonVariants, defaultProps } from './Button.types';
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
-  title: 'Example/Button',
+const meta: Meta<typeof Button> = {
+  title: 'Components/Button',
   component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
-    layout: 'centered',
-  },
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
-};
-
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default = {
+  parameters: { layout: 'centered' },
   args: {
     children: 'Label',
+    disabled: false,
+  },
+  argTypes: {
+    disabled: {
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    variant: {
+      defaultValue: defaultProps.variant,
+      options: buttonVariants,
+      control: { type: 'radio' },
+    },
+  },
+};
+
+export default meta;
+
+export const Primary: StoryObj<typeof Button> = {
+  args: {
+    variant: 'primary',
+  },
+};
+
+export const Secondary: StoryObj<typeof Button> = {
+  args: {
+    variant: 'secondary',
+  },
+};
+
+export const Accent: StoryObj<typeof Button> = {
+  args: {
+    variant: 'accent',
+  },
+};
+
+export const Ghost: StoryObj<typeof Button> = {
+  args: {
+    variant: 'ghost',
   },
 };
