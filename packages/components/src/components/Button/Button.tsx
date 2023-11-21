@@ -1,18 +1,23 @@
-import React from 'react';
+import { buttonStyles } from './Button.css';
+import { ButtonProps } from './Button.types';
 
-import { container, themeClass } from './Button.css';
-import { ButtonProps, defaultProps } from './Button.types';
-
-export function Button({
-  children,
-  variant = defaultProps.variant,
-  ...rest
-}: ButtonProps) {
+export const Button = ({
+  variant = 'primary',
+  elevated = false,
+  size = 'small',
+  className,
+  ...props
+}: ButtonProps) => {
   return (
-    <div className={themeClass}>
-      <button className={container} {...rest}>
-        {children}
-      </button>
-    </div>
+    <button
+      className={`${buttonStyles({
+        variant,
+        elevated,
+        size,
+      })} ${className}`}
+      {...props}
+    >
+      {props.children}
+    </button>
   );
-}
+};

@@ -1,74 +1,60 @@
-import { createTheme, style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
-export const [themeClass, vars] = createTheme({
-  spacing: '10px',
+import { vars } from '../ThemeProvider/theme.css';
+
+export const buttonStyles = recipe({
+  base: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: vars.fonts.paragraph,
+    fontWeight: vars.fontWeight.medium,
+    boxSizing: 'border-box',
+    height: '40px',
+    fontSize: '16px',
+    padding: '0 16px',
+    borderRadius: '24px',
+    border: 'none',
+  },
+  variants: {
+    variant: {
+      primary: {
+        backgroundColor: vars.color.primary,
+        ':disabled': {
+          backgroundColor: vars.color.primaryDisabled,
+        },
+      },
+      secondary: {
+        backgroundColor: vars.color.secondary,
+        ':disabled': {
+          backgroundColor: vars.color.secondaryDisabled,
+        },
+      },
+    },
+    size: {
+      small: {
+        width: '100px',
+      },
+      medium: {
+        width: '200px',
+      },
+    },
+    elevated: {
+      true: {
+        boxShadow: '0rem 0.25rem 1rem 0rem rgba(0,0,0,.16)',
+      },
+    },
+  },
+
+  compoundVariants: [
+    {
+      variants: {
+        variant: 'secondary',
+        size: 'medium',
+      },
+      style: {
+        fontSize: '24px',
+      },
+    },
+  ],
 });
-export const container = style({
-  padding: vars.spacing,
-});
-// import styled, { css } from 'styled-components';
-
-// import { createStyles } from '../../utils/createStyles';
-// import { ButtonProps } from './Button.types';
-
-// export const Button = styled.button<ButtonProps>(({ theme, variant }) => {
-//   return createStyles(
-//     { variant, theme },
-//     {
-//       base: css`
-//         border: none;
-//         cursor: pointer;
-//         transition: all 0.3s ease-in-out;
-//         border-radius: ${({ theme }) => theme.borderRadius.sm};
-//         padding: ${({ theme }) =>
-//           [theme.spacing[2], theme.spacing[4]].join(' ')};
-//         font-size: ${({ theme }) => theme.fontSize.base};
-
-//         &:disabled,
-//         &:disabled:hover {
-//           cursor: not-allowed;
-//           background-color: ${({ theme }) => theme.color.neutral[200]};
-//           color: ${({ theme }) => theme.color.neutral[500]};
-//           border: none;
-//         }
-//       `,
-//       variant: {
-//         primary: css`
-//           background-color: ${theme.color.primary[500]};
-//           color: ${theme.color.neutral[100]};
-
-//           &:hover {
-//             background-color: ${theme.color.primary[700]};
-//           }
-//         `,
-//         secondary: css`
-//           background-color: ${theme.color.secondary[500]};
-//           color: ${theme.color.neutral[100]};
-
-//           &:hover {
-//             background-color: ${theme.color.secondary[700]};
-//           }
-//         `,
-//         accent: css`
-//           background-color: ${theme.color.accent[500]};
-//           color: ${theme.color.neutral[100]};
-
-//           &:hover {
-//             background-color: ${theme.color.accent[700]};
-//           }
-//         `,
-//         ghost: css`
-//           background-color: ${theme.color.neutral[100]};
-//           color: ${theme.color.neutral[500]};
-//           border: solid 1px ${theme.color.neutral[500]};
-
-//           &:hover {
-//             background-color: ${theme.color.neutral[300]};
-//             color: ${theme.color.neutral[700]};
-//             border: solid 1px ${theme.color.neutral[700]};
-//           }
-//         `,
-//       },
-//     },
-//   );
-// });

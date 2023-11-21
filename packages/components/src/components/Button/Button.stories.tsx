@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
+import { ThemeProvider } from '../ThemeProvider';
 import { Button } from './Button';
 import { buttonVariants, defaultProps } from './Button.types';
 
@@ -22,6 +23,13 @@ const meta: Meta<typeof Button> = {
       control: { type: 'radio' },
     },
   },
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme="light">
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
 };
 
 export default meta;
@@ -35,17 +43,5 @@ export const Primary: StoryObj<typeof Button> = {
 export const Secondary: StoryObj<typeof Button> = {
   args: {
     variant: 'secondary',
-  },
-};
-
-export const Accent: StoryObj<typeof Button> = {
-  args: {
-    variant: 'accent',
-  },
-};
-
-export const Ghost: StoryObj<typeof Button> = {
-  args: {
-    variant: 'ghost',
   },
 };
